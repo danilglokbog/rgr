@@ -70,7 +70,7 @@ void mickeyCiph() {
                             getline(cin, text);
                             cout << "Введите имя файла для сохранения ключа: ";
                             getline(cin, keyFile);                            
-                            string ciphtext = aesEncText(text, keyFile);                          
+                            string ciphtext = mickeyEncText(text, keyFile);                          
                             cout << "Результаты шифрования:" << endl;
                             for (auto c : ciphtext) {
                                 cout << hex << setw(2) << setfill('0') << static_cast<int>(static_cast<unsigned char>(c)) << " ";
@@ -92,7 +92,7 @@ void mickeyCiph() {
                             cout << "Введите имя файла для сохранения ключа: ";
                             getline(cin, keyFile);
                             
-                            aesEncFile(inputFile, outputFile, keyFile);
+                            mickeyEncFile(inputFile, outputFile, keyFile);
                             
                             cout << "Файл успешно зашифрован!" << endl;
                             cout << "Зашифрованный файл: " << outputFile << endl;
@@ -140,7 +140,7 @@ void mickeyCiph() {
 			    getline(cin, keyFile);
 			    
 			    string ciphertext(ciphertextVec.begin(), ciphertextVec.end());
-			    string result = aesDecText(ciphertext, keyFile);
+			    string result = mickeyDecText(ciphertext, keyFile);
 			    cout << "Результат расшифровки: " << result << endl;
 			    break;
 			}
@@ -153,7 +153,7 @@ void mickeyCiph() {
                             cout << "Введите имя файла с ключом: ";
                             getline(cin, keyFile);
                             
-                            aesDecFile(inputFile, keyFile, outputFile);
+                            mickeyDecFile(inputFile, keyFile, outputFile);
                             cout << "Файл успешно расшифрован и сохранен в: " << outputFile << endl;
                             break;
                         }
