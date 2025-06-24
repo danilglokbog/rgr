@@ -23,10 +23,10 @@ void mickeyCiph() {
         return;
     }
 
-    auto aesEncFile = (void (*)(const string&, const string&, const string&))dlsym(mickeyLib, "aesEncFile");
-    auto aesDecFile = (void (*)(const string&, const string&, const string&))dlsym(mickeyLib, "aesDecFile");
-    auto aesEncText = (string (*)(const string&, const string&))dlsym(mickeyLib, "aesEncText");
-    auto aesDecText = (string (*)(const string&, const string&))dlsym(mickeyLib, "aesDecText");
+    auto mickeyEncFile = (void (*)(const string&, const string&, const string&))dlsym(mickeyLib, "mickeyEncFile");
+    auto mickeyDecFile = (void (*)(const string&, const string&, const string&))dlsym(mickeyLib, "mickeyDecFile");
+    auto mickeyEncText = (string (*)(const string&, const string&))dlsym(mickeyLib, "mickeyEncText");
+    auto mickeyDecText = (string (*)(const string&, const string&))dlsym(mickeyLib, "mickeyDecText");
 
     bool repeat = true;
     while (repeat) {
